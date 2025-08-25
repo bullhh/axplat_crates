@@ -1,4 +1,5 @@
 use axplat::init::InitIf;
+use lazyinit::LazyInit;
 
 struct InitIfImpl;
 
@@ -7,9 +8,10 @@ impl InitIf for InitIfImpl {
     /// This function should be called immediately after the kernel has booted,
     /// and performed earliest platform configuration and initialization (e.g.,
     /// early console, clocking).
-    fn init_early(_cpu_id: usize, _mbi: usize) {
+    fn init_early(_cpu_id: usize, mbi: usize) {
         axcpu::init::init_trap();
         crate::time::init_early();
+        axplat::init::BOOT_ARG.init_once(mbi);
     }
 
     /// Initializes the platform at the early stage for secondary cores.

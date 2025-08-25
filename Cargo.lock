@@ -154,6 +154,7 @@ dependencies = [
  "crate_interface",
  "handler_table",
  "kspin",
+ "lazyinit",
  "memory_addr",
 ]
 
@@ -167,6 +168,7 @@ dependencies = [
  "axplat-aarch64-peripherals",
  "dw_apb_uart",
  "kspin",
+ "lazyinit",
  "log",
  "page_table_entry",
 ]
@@ -197,6 +199,7 @@ dependencies = [
  "axcpu",
  "axplat",
  "axplat-aarch64-peripherals",
+ "lazyinit",
  "log",
  "page_table_entry",
 ]
@@ -209,6 +212,7 @@ dependencies = [
  "axcpu",
  "axplat",
  "axplat-aarch64-peripherals",
+ "lazyinit",
  "log",
  "page_table_entry",
 ]
@@ -222,6 +226,7 @@ dependencies = [
  "axcpu",
  "axplat",
  "axplat-aarch64-peripherals",
+ "lazyinit",
  "log",
  "page_table_entry",
 ]
@@ -259,6 +264,7 @@ dependencies = [
  "axconfig-macros",
  "axcpu",
  "axplat",
+ "lazyinit",
  "log",
  "riscv",
  "riscv_goldfish",

@@ -3,6 +3,7 @@ use axplat::init::InitIf;
 #[allow(unused_imports)]
 use crate::config::devices::{GICC_PADDR, GICD_PADDR, TIMER_IRQ};
 use crate::config::plat::PSCI_METHOD;
+use lazyinit::LazyInit;
 
 struct InitIfImpl;
 
@@ -13,11 +14,12 @@ impl InitIf for InitIfImpl {
     /// This function should be called immediately after the kernel has booted,
     /// and performed earliest platform configuration and initialization (e.g.,
     /// early console, clocking).
-    fn init_early(_cpu_id: usize, _dtb: usize) {
+    fn init_early(_cpu_id: usize, dtb: usize) {
         axcpu::init::init_trap();
         axplat_aarch64_peripherals::psci::init(PSCI_METHOD);
         super::dw_apb_uart::init_early();
         axplat_aarch64_peripherals::generic_timer::init_early();
+        axplat::init::BOOT_ARG.init_once(dtb);
     }
 
     /// Initializes the platform at the early stage for secondary cores.

@@ -22,6 +22,7 @@ log = "0.4"
 kspin = "0.1"
 page_table_entry = "0.5"
 dw_apb_uart = "0.1"
+lazyinit = "0.2"
 
 axconfig-macros = "0.2"
 axplat-aarch64-peripherals = { version = "0.2", path = "../axplat-aarch64-peripherals" }

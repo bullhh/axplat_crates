@@ -1,5 +1,11 @@
 //! Platform initialization.
 
+use lazyinit::LazyInit;
+
+/// boot argument.
+/// This is typically the device tree blob address passed from the bootloader.
+pub static BOOT_ARG: LazyInit<usize> = LazyInit::new();
+
 /// Platform initialization interface.
 #[def_plat_interface]
 pub trait InitIf {

@@ -1,5 +1,5 @@
 use axplat::init::InitIf;
-
+use lazyinit::LazyInit;
 struct InitIfImpl;
 
 #[impl_plat_interface]
@@ -14,6 +14,7 @@ impl InitIf for InitIfImpl {
         crate::console::init();
         crate::time::init_early();
         crate::mem::init(mbi);
+        axplat::init::BOOT_ARG.init_once(mbi);
     }
 
     /// Initializes the platform at the early stage for secondary cores.

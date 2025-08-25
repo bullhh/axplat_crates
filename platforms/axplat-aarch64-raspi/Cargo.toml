@@ -22,6 +22,7 @@ log = "0.4"
 aarch64-cpu = "10.0"
 page_table_entry = "0.5"
 axconfig-macros = "0.2"
+lazyinit = "0.2"
 axplat-aarch64-peripherals = { version = "0.2", path = "../axplat-aarch64-peripherals" }
 axcpu = { workspace = true }
 axplat = { workspace = true }
