@@ -1,5 +1,6 @@
 use axplat::init::InitIf;
 use lazyinit::LazyInit;
+
 struct InitIfImpl;
 
 #[impl_plat_interface]
